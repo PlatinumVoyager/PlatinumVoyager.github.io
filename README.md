@@ -1,2 +1,3 @@
 # PlatinumVoyager.github.io
-Official Github Pages (website) of PlatinumVoyager
+
+You can view the official website [here](https://platinumvoyager.github.io/).
