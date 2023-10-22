@@ -15,6 +15,72 @@
     <title>PlatinumVoyager</title>  
 
     <link href="./main.3f6952e4.css" rel="stylesheet">
+
+
+    <style>
+      #canv {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          top: 0;
+          left: 0;
+      }
+
+      #inline {
+        color: rgb(0, 255, 0);
+        background-color: black;
+        border: 2px;
+      }
+
+      #glink {
+        color: rgb(0, 255, 0);
+        background-color: black;
+      }
+
+      a:hover#glink {
+        color: white;
+      }
+
+      a:hover {
+        color: white;
+      }
+      
+      .navbar-default .navbar-toggle {
+        background-color: black;
+        color: green;
+      }
+
+      .navbar-default {
+        background-color: black;
+        width: 100%;
+        height: auto;
+        position: absolute;
+      }
+
+      .navbar-default .navbar-collapse {
+        background-color: black;
+        color: green;
+        width: 100%;
+      }
+
+      .navbar-default .navbar-collapse:focus {
+        background-color: black;
+      }
+
+      .navbar-default .navbar-nav>li>a {
+        color: rgb(0, 255, 0);
+      }
+
+      .navbar-default .navbar-nav>li>a:hover {
+        color: white;
+      }
+
+      .navbar-default .navbar-nav>.active>a {
+        color: gray;
+      }
+
+    </style>
   </head>
 
   <body class="">
@@ -25,7 +91,7 @@
 
   <!-- START HEADER -->
   <header>
-    <nav class="navbar navbar-dark navbar-fixed-top navbar-default">
+    <nav class="navbar navbar-dark navbar-fixed-top navbar-default" role="navigation">
       <div class="container">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -33,7 +99,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <div class="collapse navbar-collapse" id="navbar-collapse">
+        <div class="collapse navbar-collapse" id="navbar-collapse" id="foo">
           <ul class="nav navbar-nav">
             <li><a href="./index.html" title="">01 : Home</a></li>
             <li><a href="./works.html" title="">02 : Projects</a></li>
@@ -44,48 +110,136 @@
     </nav>
   </header>
 
-  <div class="section-container">
+  <canvas id="canv" style="background-color: black;"></canvas>
+
+  <body class="minimal">
+    <div class="section-container">
       <div class="container">
-        <div class="row">
+        <div class="row" id="bord">
           <div class="col-xs-12">
             <div class="section-container-spacer text-center">
-              <h1 class="h2">03 : About</h1>
+              <h1 class="h2" style="color: rgb(0, 255, 0); background-color: black;">03 : About</h1>
             </div>
             
             <div class="row">
-              <div class="col-md-10 col-md-offset-1">
+              <div class="col-lg-10 col-md-offset-1">
                 <div class="row">
                   <div class="col-xs-12 col-md-6">
-                    <h3>General Information</h3>
-                    <p>Network and general Operating Systems open source software engineer with
-                    a strong focus in Cybersecurity and Information Technology.</p>
-                    <h3>Overall Experience</h3>
-                    <p>Obtained across multiple domains including: Computer Networking, Packet routing/assembly/disassembly, 
-                      network enumeration, etc.
-                    <h3>Skill set</h3>
-                    <p>* Administration</p>
-                    <p>* Rust Programming</p>
-                    <p>* C Programming</p>
-                    <p>* Python Programming</p>
+                    <h3 id="inline">General Information</h3>
+                    <p style="color: white; font-size: medium; background-color: black;">Junior level Network Engineer specifically in the domain of Computer Networking, Packet/Protocol Architecture, etc. The main focus is 
+                      to become proficient within the domain of Offensive Security. To the extent of becoming a Cybersecurity Engineer. The related github account demonstrates the technical capabilities possessed.
+                      If you would like something specific developed to demonstrate skill, please send a bogus pull request to any repository hosted at the <a href="https://github.com/PlatinumVoyager" id="glink">Official Github Account</a>
+                    </p>
+
+                    <h3 id="inline" style="margin-top: 50px;">Technical Experience</h3>
+                    <p style="color: white; font-size: medium; background-color: black;">
+                      Includes domains such as the following: Binary Analysis (GDB, Ghidra), Network Enumeration (NMap, Custom tooling), Offensive frameworks (Metasploit, Custom tooling) Software management with git/Github.
+                      Experience in Linux/Windows ABI/API specific software development (as seen on Github)
+                    </p>
+                  </div>
+                  <div class="col-xs-12 col-md-6">
+                    <h3 id="inline">Skill set</h3>
+                    <div style="color: white; font-size: medium; background-color: black;">
+                      <p>* Computer Administration (Windows/Linux)</p>
+                      <p>* <a href="#" alt="click me" id="glink">Google IT Support Professional Certified</a></p>
+                      <p>* Programming: C, Python3, Rust</p>
+                      <p>* Offensive/Intelligence based software development skillset</p>
+                      <p>* Mobile application development with Kotlin (future)</p>
+                      <p>* Network software communications knowledge (sockets, channels, pipes, etc)</p>
+                      <p>* Network Administration (Active Directory, Can learn Kerberos)</p>
+                      <p>* Computer and Computer Network Troubleshooting</p>
+                      <p>* Intermediate physical hardware inspection and replacement</p>
+                      <p>* Network setup, configuration, customization and deployment</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
         </div>
         </div>
       </div>
     </div>
 
-    <footer class="footer-container text-center" style="position: fixed; width: 100%; left: 0; bottom: 0; overflow: hidden; height: auto; background-color: black;">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <p style="color: white;">© PLATINUMVOYAGER 2023. All rights reserved.</p>
-          </div>
+    <script type="text/javascript">
+      // Get the canvas node and the drawing context
+      const canvas = document.querySelector('#canv');
+      const ctx = canvas.getContext('2d');
+
+      // set the width and height of the canvas
+      const w = canvas.width = document.body.offsetWidth;
+      const h = canvas.height = document.body.offsetHeight;
+
+      // draw a black rectangle of width and height same as that of the canvas
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0, 0, w, h);
+
+      const cols = Math.floor(w / 20) + 1;
+      const ypos = Array(cols).fill(0);
+
+      function matrix() {
+          // Draw a semitransparent black rectangle on top of the previous drawing
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+          ctx.fillRect(0, 0, w, h);
+
+          // Set color to green and font to 15pt monospace in the drawing context
+          ctx.fillStyle = '#0f0';
+          ctx.font = '15pt monospace';
+
+          // Loop through columns and update the animation
+          ypos.forEach((y, ind) => {
+              const text = String.fromCharCode(Math.random() * 128);
+              const x = ind * 20;
+              ctx.fillText(text, x, y);
+
+              if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+              else ypos[ind] = y + 20;
+          });
+      }
+
+      // Render the animation at > 20 (val 50) FPS.
+      setInterval(matrix, 77);
+
+      function generateCanvasImage() {
+          // Create an off-screen canvas for rendering
+          const offscreenCanvas = document.createElement('canvas');
+          offscreenCanvas.width = w * 3;
+          offscreenCanvas.height = h * 3;
+          const offscreenCtx = offscreenCanvas.getContext('2d');
+
+          // Draw the same content on the off-screen canvas
+          offscreenCtx.fillStyle = '#000';
+          offscreenCtx.fillRect(1, 1, w, h);
+
+          offscreenCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+          offscreenCtx.fillRect(1, 1, w, h);
+
+          offscreenCtx.fillStyle = '#0f0';
+          offscreenCtx.font = '15pt monospace';
+
+          ypos.forEach((y, ind) => {
+              const text = String.fromCharCode(Math.random() * 128);
+              const x = ind * 20;
+              offscreenCtx.fillText(text, x, y);
+
+              if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+              else ypos[ind] = y + 20;
+          });
+
+          // Convert the off-screen canvas to a data URL
+          return offscreenCanvas.toDataURL();
+      }
+    </script>
+  </body>
+
+  <footer class="footer-container text-center" style="position: fixed; width: 100%; left: 0; bottom: 0; overflow: hidden; height: auto; background-color: black; padding-top: 2%;">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <p style="color: white;">© PLATINUMVOYAGER 2023. All rights reserved.</p>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", function (event) {

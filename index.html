@@ -42,9 +42,12 @@
 
       /* Additional styling for the canvas */
       #canv {
-          position: absolute;
-          width: 100%;
-          height: 100%;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        top: 0;
+        left: 0;
       }
 
       .navbar {
@@ -62,6 +65,10 @@
       /* Header Nav font color */
       .navbar-inverse .navbar-nav>li>a {
         color: rgb(0, 255, 0);
+      }
+
+      .navbar-active .navbar-nav>.active>a {
+        color: gray;
       }
   </style>
   </head>
@@ -125,7 +132,6 @@
     </div>
 
     <script type="text/javascript">
-        // Your JavaScript code here
         // Get the canvas node and the drawing context
         const canvas = document.querySelector('#canv');
         const ctx = canvas.getContext('2d');
@@ -161,7 +167,7 @@
             });
         }
 
-        // Render the animation at 20 FPS.
+        // Render the animation at > 20 (val 50) FPS.
         setInterval(matrix, 77);
 
         function generateCanvasImage() {

@@ -43,87 +43,227 @@
       </div> 
     </div>
   </nav>
+  <style>
+    #canv {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          top: 0;
+          left: 0;
+    }
+
+    #header {
+      color: rgb(0, 255, 0);
+    }
+
+    #line {
+      color: white;
+      font-size: medium;
+      background-color: black;
+    }
+
+    .btn-default {
+      color: rgb(0, 255, 0);
+
+      border-color: rgb(0, 255, 0);;
+    }
+
+    .card-container {
+      background-color: black;
+    }
+
+    a:hover {
+      color: white;
+    }
+    
+    .navbar-default .navbar-toggle {
+      background-color: black;
+      color: green;
+    }
+
+    .navbar-default {
+      background-color: black;
+      width: 100%;
+      height: auto;
+      position: absolute;
+    }
+
+    .navbar-default .navbar-collapse {
+      background-color: black;
+      color: green;
+      width: 100%;
+    }
+
+    .navbar-default .navbar-collapse:focus {
+      background-color: black;
+    }
+
+    .navbar-default .navbar-nav>li>a {
+      color: rgb(0, 255, 0);
+    }
+
+    .navbar-default .navbar-nav>li>a:hover {
+      color: white;
+    }
+
+    .navbar-default .navbar-nav>.active>a {
+      color: gray;
+    }
+  </style>
 </header>
 
-<div class="section-container">
-  <div class="container">
-    <div class="row">
-      
-      <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
-        <div class="text-center">
-          <h1 class="h2">02 : Projects</h1>
-          <p>A collection of in house developed software can be found listed below.</p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="row">
-          <div class="col-sm-4">
-            <a href="https://github.com/PlatinumVoyager/BrightStar" title="">
-              <img src="./assets/images/brightstar.jpg" alt="Image" class="img-responsive">
-            </a>
-            <div class="card-container card-container-lg">
-              <h4>C</h4>
-              <h3>BrightStar</h3>
-              <p>Simple Service Discovery Protocol (SSDP) LAN/WAN analyzer/manipulation framework.</p>
-              <a href="https://github.com/PlatinumVoyager/BrightStar" title="" class="btn btn-default black-image-project-hover">Visit</a>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <a href="https://github.com/PlatinumVoyager/BinaryMagic" title="">
-              <img src="./assets/images/binarymagic.jpg" alt="Image" class="img-responsive">
-            </a>
-            <div class="card-container card-container-lg">
-              <h4>Rust</h4>
-              <h3>BinaryMagic</h3>
-              <p>A bare bones ELF32/ELF64 bit Goblin binary executable parser in Rust.</p>
-              <a href="https://github.com/PlatinumVoyager/BinaryMagic" title="" class="btn btn-default black-image-project-hover">Visit</a>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <a href="https://github.com/PlatinumVoyager/WireEye" title="">
-              <img src="./assets/images/wireeye.jpg" alt="Image" class="img-responsive">
-            </a>
-            <div class="card-container card-container-lg">
-              <h4>Python3</h4>
-              <h3>WireEye</h3>
-              <p>Toolset for 802.11/LAN reconnaissance across remote and local networks.</p>
-              <a href="https://github.com/PlatinumVoyager/WireEye" title="" class="btn btn-default black-image-project-hover">Visit</a>
-            </div>
+<canvas id="canv" style="background-color: black;"></canvas>
+<body class="minimal">
+  <div class="section-container">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+          <div class="text-center">
+            <h1 class="h2" style="color: rgb(0, 255, 0); background-color: black;">02 : Projects</h1>
+            <p id="line">A collection of in house developed software can be found listed below.</p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-4">
-            <a href="https://github.com/PlatinumVoyager/fwstatus">
-              <img src="./assets/images/fwstatus.jpg" alt="Image" class="img-responsive">
-            </a>
-            <div class="card-container">
-              <h4>C</h4>
-              <h3>FwStatus</h3>
-              <p>Microsoft Defender Firewall Status Operations.</p>
-              <a href="https://github.com/PlatinumVoyager/fwstatus" class="btn btn-default black-image-project-hover">Visit</a>
-            </div>
-          </div>
-           <div class="col-sm-4">
-              <a href="https://github.com/PlatinumVoyager/NEToolset">
-                <img src="./assets/images/netoolset.jpg" alt="Image" class="img-responsive">
+        <div class="item">
+          <div class="row">
+            <div class="col-sm-4">
+              <a href="https://github.com/PlatinumVoyager/BrightStar" title="">
+                <img src="./assets/images/brightstar.jpg" alt="Image" class="img-responsive">
               </a>
-              <div class="card-container">
-                <h4>C, Python3, Golang</h4>
-                <h3>NEToolset</h3>
-                <p>A collection of networking tools and utilities.</p>
-                <a href="https://github.com/PlatinumVoyager/NEToolset" class="btn btn-default black-image-project-hover">Visit</a>
+              <div class="card-container card-container-lg">
+                <h4>C</h4>
+                <h3 id="header">BrightStar</h3>
+                <p id="line">Simple Service Discovery Protocol (SSDP) LAN/WAN analyzer/manipulation framework.</p>
+                <a href="https://github.com/PlatinumVoyager/BrightStar" title="" class="btn btn-default black-image-project-hover">Visit</a>
               </div>
             </div>
-            
-        </div>
-        <!--/row-->
-    </div>
-   
-    </div>
+            <div class="col-sm-4">
+              <a href="https://github.com/PlatinumVoyager/BinaryMagic" title="">
+                <img src="./assets/images/binarymagic.jpg" alt="Image" class="img-responsive">
+              </a>
+              <div class="card-container card-container-lg">
+                <h4>Rust</h4>
+                <h3 id="header">BinaryMagic</h3>
+                <p id="line">A bare bones ELF32/ELF64 bit Goblin binary executable parser in Rust.</p>
+                <a href="https://github.com/PlatinumVoyager/BinaryMagic" title="" class="btn btn-default black-image-project-hover">Visit</a>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <a href="https://github.com/PlatinumVoyager/WireEye" title="">
+                <img src="./assets/images/wireeye.jpg" alt="Image" class="img-responsive">
+              </a>
+              <div class="card-container card-container-lg">
+                <h4>Python3</h4>
+                <h3 id="header">WireEye</h3>
+                <p id="line">Toolset for 802.11/LAN reconnaissance across remote and local networks.</p>
+                <a href="https://github.com/PlatinumVoyager/WireEye" title="" class="btn btn-default black-image-project-hover">Visit</a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <a href="https://github.com/PlatinumVoyager/fwstatus">
+                <img src="./assets/images/fwstatus.jpg" alt="Image" class="img-responsive">
+              </a>
+              <div class="card-container">
+                <h4>C</h4>
+                <h3 id="header">FwStatus</h3>
+                <p id="line">Microsoft Defender Firewall Status Operations.</p>
+                <a href="https://github.com/PlatinumVoyager/fwstatus" class="btn btn-default black-image-project-hover">Visit</a>
+              </div>
+            </div>
+            <div class="col-sm-4">
+                <a href="https://github.com/PlatinumVoyager/NEToolset">
+                  <img src="./assets/images/netoolset.jpg" alt="Image" class="img-responsive">
+                </a>
+                <div class="card-container">
+                  <h4>C, Python3, Golang</h4>
+                  <h3 id="header">NEToolset</h3>
+                  <p id="line">A collection of networking tools and utilities.</p>
+                  <a href="https://github.com/PlatinumVoyager/NEToolset" class="btn btn-default black-image-project-hover">Visit</a>
+                </div>
+              </div>
+              
+          </div>
+          <!--/row-->
+      </div>
+    
+      </div>
+      </div>
     </div>
   </div>
-</div>
 
+  <script type="text/javascript">
+    // Get the canvas node and the drawing context
+    const canvas = document.querySelector('#canv');
+    const ctx = canvas.getContext('2d');
+
+    // set the width and height of the canvas
+    const w = canvas.width = document.body.offsetWidth;
+    const h = canvas.height = document.body.offsetHeight;
+
+    // draw a black rectangle of width and height same as that of the canvas
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, w, h);
+
+    const cols = Math.floor(w / 20) + 1;
+    const ypos = Array(cols).fill(0);
+
+    function matrix() {
+        // Draw a semitransparent black rectangle on top of the previous drawing
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+        ctx.fillRect(0, 0, w, h);
+
+        // Set color to green and font to 15pt monospace in the drawing context
+        ctx.fillStyle = '#0f0';
+        ctx.font = '15pt monospace';
+
+        // Loop through columns and update the animation
+        ypos.forEach((y, ind) => {
+            const text = String.fromCharCode(Math.random() * 128);
+            const x = ind * 20;
+            ctx.fillText(text, x, y);
+
+            if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+            else ypos[ind] = y + 20;
+        });
+    }
+
+    // Render the animation at > 20 (val 50) FPS.
+    setInterval(matrix, 77);
+
+    function generateCanvasImage() {
+        // Create an off-screen canvas for rendering
+        const offscreenCanvas = document.createElement('canvas');
+        offscreenCanvas.width = w;
+        offscreenCanvas.height = h;
+        const offscreenCtx = offscreenCanvas.getContext('2d');
+
+        // Draw the same content on the off-screen canvas
+        offscreenCtx.fillStyle = '#000';
+        offscreenCtx.fillRect(1, 1, w, h);
+
+        offscreenCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+        offscreenCtx.fillRect(1, 1, w, h);
+
+        offscreenCtx.fillStyle = '#0f0';
+        offscreenCtx.font = '15pt monospace';
+
+        ypos.forEach((y, ind) => {
+            const text = String.fromCharCode(Math.random() * 128);
+            const x = ind * 20;
+            offscreenCtx.fillText(text, x, y);
+
+            if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+            else ypos[ind] = y + 20;
+        });
+
+        // Convert the off-screen canvas to a data URL
+        return offscreenCanvas.toDataURL();
+    }
+  </script>
+</body>
 
 <footer class="footer-container text-center" style="position: fixed; width: 100%; left: 0; bottom: 0; overflow: hidden; height: auto; background-color: black;">
   <div class="container">
