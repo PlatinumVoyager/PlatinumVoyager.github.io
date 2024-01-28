@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+        <link href="./main.3f6952e4.css" rel="stylesheet">
+    </head>
+    <header>
+        <nav class="navbar-dark navbar-fixed-top navbar-default">
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav ">
+                        <li><a href="./index.html" title="">01 : Home</a></li>
+                        <li class="active"><a href="./articles.html">02: Articles</a></li>
+                        <li><a href="./works.html" title="">03 : Projects</a></li>
+                        <li><a href="./about.html" title="">04 : About</a></li>
+                    </ul>
+                </div> 
+            </div>
+        </nav>
+
+        <!-- START CSS INLINE STYLING OPERATIONS -->
+        <style>
+            #canv {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                top: 0;
+                left: 0;
+            }
+    
+            #header {
+                color: rgb(0, 255, 0);
+            }
+        
+            #line {
+                color: white;
+                font-size: medium;
+                background-color: black;
+            }
+    
+            ul#countdown {
+                background-color: black;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 50%;
+                margin: 0 auto;
+                padding: 15px 0 20px 0;
+                color: #fff;
+                border: 1px solid #adafb2;
+                border-width: 1px;
+                overflow: hidden;
+                font-family: 'Arial Narrow', Arial, sans-serif;
+                font-weight: bold;
+                
+            }
+                
+            .lic {
+                margin: 0 -3px 0 0;
+                padding: 0;
+                display: inline-block;
+                width: 22%;
+                text-align: center;
+            }
+
+            .number {
+                /* border: 2px solid; */
+                /* border-color: white; */
+                padding-top: 15%;
+                margin-bottom: 10%;
+                color: #00ff00;
+                font-size: 60px;
+                font-family: 'Courier New';
+            }
+
+            .label {
+                color: #adafb2;
+                margin-bottom: 10%;
+                font-size: 18px;
+                font-size: 1.5vw;
+                text-transform: uppercase;
+            }
+        
+            a:hover {
+                color: white;
+            }
+        
+            .navbar-default .navbar-toggle {
+                background-color: black;
+                color: green;
+            }
+    
+            .navbar-default {
+                background-color: black;
+                width: 100%;
+                height: auto;
+                position: absolute;
+            }
+    
+            .navbar-default .navbar-collapse {
+                background-color: black;
+                color: green;
+                width: 100%;
+            }
+    
+            .navbar-default .navbar-collapse:focus {
+                background-color: black;
+            }
+    
+            .navbar-default .navbar-nav>li>a {
+            color: rgb(0, 255, 0);
+            }
+    
+            .navbar-default .navbar-nav>li>a:hover {
+                color: white;
+            }
+
+            .navbar-default .navbar-nav>.active>a {
+                color: gray;
+            }
+        </style>
+        <!-- END CSS INLINE STYLING -->
+    </header>
+
+    <!-- CANVAS SETUP -->
+    <canvas id="canv"></canvas>
+
+    <body>
+        <div class="section-container">
+            <div class="container">
+                <div class="row" id="bord">
+                    <div class="col-xs-12">
+                        <div class="section-container-spacer text-center">
+                        <h1 class="h2" style="color: rgb(0, 255, 0); background-color: black;">0x41727469636C6573</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- START BREAKPOCALYPSE -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- END BREAKPOCALYPSE -->
+        
+        <ul id="countdown">
+            <!-- DAYS -->
+            <li id="days" class="lic">
+                <div class="number">00</div>
+                <div class="label">Days</div>
+            </li>
+            
+            <!-- HOURS -->
+            <li id="hours" class="lic">
+                <div class="number">00</div>
+                <div class="label">Hours</div>
+            </li>
+
+            <!-- MINUTES -->
+            <li id="minutes" class="lic">
+                <div class="number">00</div>
+                <div class="label">Minutes</div>
+            </li>
+
+            <!-- SECONDS -->
+            <li id="seconds" class="lic">
+                <div class="number">00</div>
+                <div class="label">Seconds</div>
+            </li>
+        </ul>      
+
+        <!-- MATRIX SETUP -->
+        <script type="text/javascript">
+            // Get the canvas node and the drawing context
+            const canvas = document.querySelector('#canv');
+            const ctx = canvas.getContext('2d');
+        
+            // set the width and height of the canvas
+            const w = canvas.width = document.body.offsetWidth;
+            const h = canvas.height = document.body.offsetHeight;
+        
+            // draw a black rectangle of width and height same as that of the canvas
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, w, h);
+        
+            const cols = Math.floor(w / 20) + 1;
+            const ypos = Array(cols).fill(0);
+        
+            function matrix() {
+                // Draw a semitransparent black rectangle on top of the previous drawing
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+                ctx.fillRect(0, 0, w, h);
+        
+                // Set color to green and font to 15pt monospace in the drawing context
+                ctx.fillStyle = '#0f0';
+                ctx.font = '15pt monospace';
+        
+                // Loop through columns and update the animation
+                ypos.forEach((y, ind) => {
+                    const text = String.fromCharCode(Math.random() * 128);
+                    const x = ind * 20;
+                    ctx.fillText(text, x, y);
+        
+                    if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+                    else ypos[ind] = y + 20;
+                });
+            }
+        
+            // Render the animation at > 20 (val 50) FPS.
+            setInterval(matrix, 77);
+        
+            function generateCanvasImage() {
+                // Create an off-screen canvas for rendering
+                const offscreenCanvas = document.createElement('canvas');
+                offscreenCanvas.width = w;
+                offscreenCanvas.height = h;
+                const offscreenCtx = offscreenCanvas.getContext('2d');
+        
+                // Draw the same content on the off-screen canvas
+                offscreenCtx.fillStyle = '#000';
+                offscreenCtx.fillRect(1, 1, w, h);
+        
+                offscreenCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+                offscreenCtx.fillRect(1, 1, w, h);
+        
+                offscreenCtx.fillStyle = '#0f0';
+                offscreenCtx.font = '15pt monospace';
+        
+                ypos.forEach((y, ind) => {
+                    const text = String.fromCharCode(Math.random() * 128);
+                    const x = ind * 20;
+                    offscreenCtx.fillText(text, x, y);
+        
+                    if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+                    else ypos[ind] = y + 20;
+                });
+        
+                // Convert the off-screen canvas to a data URL
+                return offscreenCanvas.toDataURL();
+            }
+          </script>
+
+        <script type="text/javascript">
+            /* --------------------------
+            * GLOBAL VARS
+            * -------------------------- */
+            var targetDate = new Date("2024/2/5 3:00:00");   
+
+            // Other date related variables
+            var days;
+            var hrs;
+            var min;
+            var sec;
+
+            /* --------------------------
+            * ON DOCUMENT LOAD
+            * -------------------------- */
+            $(function() {
+                // Calculate time until launch date
+                timeToLaunch();
+                
+                // Transition the current countdown from 0 
+                numberTransition('#days .number', days, 1000, 'easeOutQuad');
+                numberTransition('#hours .number', hrs, 1000, 'easeOutQuad');
+                numberTransition('#minutes .number', min, 1000, 'easeOutQuad');
+                numberTransition('#seconds .number', sec, 1000, 'easeOutQuad');
+                
+                // Begin Countdown
+                setTimeout(countDownTimer,1001);
+            });
+
+            /* --------------------------
+            * FIGURE OUT THE AMOUNT OF 
+            TIME LEFT BEFORE LAUNCH
+            * -------------------------- */
+            function timeToLaunch(){
+                // Get the current date
+                var currentDate = new Date();
+
+                // Find the difference between dates
+                var diff = (currentDate - targetDate)/1000;
+                var diff = Math.abs(Math.floor(diff));  
+
+                // Check number of days until target
+                days = Math.floor(diff/(24*60*60));
+                sec = diff - days * 24*60*60;
+
+                // Check number of hours until target
+                hrs = Math.floor(sec/(60*60));
+                sec = sec - hrs * 60*60;
+
+                // Check number of minutes until target
+                min = Math.floor(sec/(60));
+                sec = sec - min * 60;
+            }
+
+            /* --------------------------
+            * DISPLAY THE CURRENT 
+            COUNT TO LAUNCH
+            * -------------------------- */
+            function countDownTimer(){ 
+                
+                // Figure out the time to launch
+                timeToLaunch();
+                
+                // Write to countdown component
+                $( "#days .number" ).text(days);
+                $( "#hours .number" ).text(hrs);
+                $( "#minutes .number" ).text(min);
+                $( "#seconds .number" ).text(sec);
+                
+                // Repeat the check every second
+                setTimeout(countDownTimer,1000);
+            }
+
+            /* --------------------------
+            * TRANSITION NUMBERS FROM 0
+            TO CURRENT TIME UNTIL LAUNCH
+            * -------------------------- */
+            function numberTransition(id, endPoint, transitionDuration, transitionEase){
+            // Transition numbers from 0 to the final number
+            $({numberCount: $(id).text()}).animate({numberCount: endPoint}, {
+                    duration: transitionDuration,
+                    easing:transitionEase,
+                    
+                    step: function() {
+                        $(id).text(Math.floor(this.numberCount));
+                    },
+
+                    complete: function() {
+                        $(id).text(this.numberCount);
+                    }
+                }); 
+            };
+        </script>
+    </body>
+
+    <footer class="footer-container text-center" style="position: fixed; width: 100%; left: 0; bottom: 0; overflow: hidden; height: auto; background-color: black; padding-top: 2%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                <p style="color: white;">© PLATINUMVOYAGER 2024. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+           navActivePage();
+        });
+    </script>
+      
+    <script type="text/javascript" src="./main.70a66962.js"></script></body>
+      
+</html>
