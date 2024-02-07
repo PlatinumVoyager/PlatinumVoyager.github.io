@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<meta content="width=device-width,initial-scale=1" name="viewport">
+		<meta content="description" name="description">
+		<meta name="google" content="notranslate" />
+		<meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+		<!-- Disable tap highlight on IE -->
+		<meta name="msapplication-tap-highlight" content="no">
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+		<link href="./assets/favicon.ico" rel="icon">
+
+		<title>PlatinumVoyager</title>
+
+		<link href="./main.css" rel="stylesheet"></head>
+		<link href="./hover.css" rel="stylesheet">
+	</head>
+	<header>
+		<nav class="navbar-dark navbar-fixed-top navbar-default">
+			<div class="container">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+		
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+					<ul class="nav navbar-nav ">
+						<li><a href="./index.html" title="Official landing page" class="hvr-underline-from-center" id="sweep-link-home">01 : Home</a></li>
+						<li><a href="./articles.html" title="Technical articles and posts" class="hvr-underline-from-center" id="sweep-link-articles">02: Articles</a></li>
+						<li class="active"><a href="./projects.html" title="You are here" class="hvr-underline-from-center" id="sweep-link-projects">03 : Projects <i class="fa fa-folder-open hvr-icon"></i></a></li>
+						<li><a href="./about.html" title="About me" class="hvr-underline-from-center" id="sweep-link-about">04 : About</a></li>
+					</ul>
+				</div> 
+			</div>
+		</nav>
+
+		<style>	
+			/* HOME LINK */
+			#sweep-link-home.hvr-underline-from-center:before {
+				background: rgb(0, 255, 0);
+			}
+
+			#sweep-link-home:hover {
+				color: rgb(0, 255, 0);
+			}
+
+			#sweep-link-home, #sweep-link-articles, #sweep-link-projects, #sweep-link-about {
+				max-width: 100%;
+				max-height: 100%;
+				padding-top: 10px; padding-bottom: 10px;
+			}
+
+			a#sweep-link-home.hvr-icon-fade:hover {
+				color: rgb(255, 255, 255);
+			}
+
+			i.fa.fa-folder-open.hvr-icon {
+				color: grey;
+			}
+
+			i.fa.fa-folder-open.hvr-icon:hover {
+				/*  */
+			}
+
+			/* ARTICLES LINK */
+			#sweep-link-articles.hvr-underline-from-center:before {
+				background: rgb(0, 255, 0);
+			}
+
+			#sweep-link-articles:hover {
+				color: rgb(0, 255, 0);
+			}
+
+			/* PROJECTS LINK */
+			#sweep-link-projects.hvr-underline-from-center:before {
+				background: grey;
+			}
+
+			#sweep-link-projects:hover {
+				color: grey;
+			}
+
+			/* ABOUT LINK */
+			#sweep-link-about.hvr-underline-from-center:before {
+				background: rgb(0, 255, 0);
+			}
+
+			#sweep-link-about:hover {
+				color: rgb(0, 255, 0);
+			}
+
+			#canv {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+				top: 0;
+				left: 0;
+			}
+
+			#header {
+				color: rgb(0, 255, 0);
+			}
+
+			.col-container {
+					overflow-y: auto;
+					opacity: 90%;
+					border: 2px solid;
+					border-color: rgb(65, 65, 65);
+					position: stikcy;
+					display: table;
+					max-width: 100%;
+					max-height: 100%;
+					margin: auto;
+				}
+				
+			.col {
+				background: black;
+				display: table-cell;    
+				max-width: 100%;
+				max-height: 100%;            
+			}
+
+			#line {
+				color: white;
+				font-size: medium;
+				background-color: black;
+			}
+
+			.btn-default {
+				color: white;
+				border-color: rgb(0, 255, 0);;
+			}
+
+			.btn-default:hover {
+				border-color: rgb(0, 255, 0);
+				color: rgb(0, 255, 0);
+			}
+
+			.card-container {
+				background-color: black;
+			}
+
+			a:hover {
+				color: white;
+			}
+
+			.navbar-default .navbar-toggle {
+				background-color: black;
+				color: green;
+			}
+
+			.navbar-default {
+				background-color: black;
+				width: 100%;
+				height: auto;
+				position: absolute;
+			}
+
+			.navbar-default .navbar-collapse {
+				background-color: black;
+				color: green;
+				width: 100%;
+			}
+
+			.navbar-default .navbar-collapse:focus {
+				background-color: black;
+			}
+
+			.navbar-default .navbar-nav>li>a {
+				color: rgb(0, 255, 0);
+			}
+
+			.navbar-default .navbar-nav>li>a:hover {
+				color: white;
+			}
+
+			.navbar-default .navbar-nav>.active>a {
+				color: gray;
+			}
+
+			.glow {
+				padding-top: 2.5%;
+				font-size: 30px;
+				text-align: center;
+				animation: glow 1s ease-in-out infinite alternate;
+			}
+
+			@-webkit-keyframes glow {
+				from {
+					text-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 20px hsl(101, 100%, 25%), 0 0 30px #48ff00, 0 0 40px #48ff00, 0 0 50px #38ff06, 0 0 60px #141414;
+				}
+			
+				to {
+					text-shadow: 0 0 60px #000000, 0 0 30px #56aa26, 0 0 30px #31f700, 0 0 40px #44961e, 0 0 50px #33ff00, 0 0 60px #3cff00, 0 0 70px #5eff00;
+				}
+			}
+
+			/* Flashlight Overlay */
+			:root {
+				cursor: none;
+				--cursorX: 50vw;
+				--cursorY: 50vh;
+			}
+
+			:root:before {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				z-index: 1;
+				pointer-events: none;
+				background: radial-gradient(
+					circle 15vmax at var(--cursorX) var(--cursorY),
+					rgba(0,0,0,0) 10%,
+					rgba(0,0,0,.5) 50%,
+					rgba(0,0,0,.95) 100%
+				)
+			}
+		</style>
+	</header>
+
+	<!-- <canvas id="canv" style="background-color: black;"></canvas> -->
+	<body class="minimal" style="background-color: rgb(7, 7, 7);">
+		<div class="section-container">
+
+			<div class="container" style="padding-top: 10%; margin: auto;">
+				<div class="col-container">
+					<div class="col" style="background:black;" style="padding-top: 40%; text-overflow: clip;">
+						<h2 id="table-h2" style="color: rgb(0, 255, 0);">Oops, looks like the lights are out :(</h2>
+						<br>
+						<br>
+						<!-- FIRST ARTICLE -->
+						<p style="text-align: center; font-size: 12px; color: white;">This page seems to be down for site wide revisioning, stand by. Thank you. <span style="color: red;">🖤</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="container" style="visibility: hidden;">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+						<div class="text-center">
+							<h1 class="glow" style="color: rgb(0, 255, 0);">0x50726F6A65637473</h1>
+							<p id="line">A collection of in house developed software can be found listed below.</p>
+						</div>
+					</div>
+					<div class="item">
+						<!-- ROW #1 START -->
+						<div class="row">
+
+							<!-- WIRELESSADVOCATE CARD CONTAINER -->
+							<div class="col-sm-4">
+								<a href="https://github.com/PlatinumVoyager/WirelessAdvocate" title="">
+									<img src="./assets/images/brightstar.jpg" alt="Image" class="img-responsive">
+								</a>
+								<div class="card-container card-container-lg">
+									<h4>C</h4>
+									<h3 id="header">WirelessAdvocate</h3>
+									<p id="line">Dynamic 802.11 NIC extension based modules for the WireEye wireless reconnaissance framework.</p>
+									<a href="https://github.com/PlatinumVoyager/WirelessAdvocate" title="" class="btn btn-default black-image-project-hover">Visit</a>
+								</div>
+							</div>
+
+							<!-- BRIGHTSTAR CARD CONTAINER -->
+							<div class="col-sm-4">
+								<a href="https://github.com/PlatinumVoyager/BrightStar" title="">
+									<img src="./assets/images/brightstar.jpg" alt="Image" class="img-responsive">
+								</a>
+								<div class="card-container card-container-lg">
+									<h4>C</h4>
+									<h3 id="header">BrightStar</h3>
+									<p id="line">Simple Service Discovery Protocol (SSDP) LAN/WAN analyzer/manipulation framework.</p>
+									<a href="https://github.com/PlatinumVoyager/BrightStar" title="" class="btn btn-default black-image-project-hover">Visit</a>
+								</div>
+							</div>
+
+							<!-- BINARYMAGIC CARD CONTAINER -->
+							<div class="col-sm-4">
+								<a href="https://github.com/PlatinumVoyager/BinaryMagic" title="">
+									<img src="./assets/images/binarymagic.jpg" alt="Image" class="img-responsive">
+								</a>
+								<div class="card-container card-container-lg">
+									<h4>Rust</h4>
+									<h3 id="header">BinaryMagic</h3>
+									<p id="line">A bare bones ELF32/ELF64 bit Goblin binary executable parser in Rust.</p>
+									<a href="https://github.com/PlatinumVoyager/BinaryMagic" title="" class="btn btn-default black-image-project-hover">Visit</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- ROW #2 START -->
+					<div class="row">
+
+						<!-- WIREEYE CARD CONTAINER -->
+						<div class="col-sm-4">
+							<a href="https://github.com/PlatinumVoyager/WireEye" title="">
+								<img src="./assets/images/wireeye.jpg" alt="Image" class="img-responsive">
+							</a>
+							<div class="card-container card-container-lg">
+								<h4>Python3</h4>
+								<h3 id="header">WireEye</h3>
+								<p id="line">Toolset for 802.11/LAN reconnaissance across remote and local networks.</p>
+								<a href="https://github.com/PlatinumVoyager/WireEye" title="" class="btn btn-default black-image-project-hover">Visit</a>
+							</div>
+						</div>
+						
+						<!-- FWSTATUS CARD CONTAINER -->
+						<div class="col-sm-4">
+							<a href="https://github.com/PlatinumVoyager/fwstatus">
+								<img src="./assets/images/fwstatus.jpg" alt="Image" class="img-responsive">
+							</a>
+							<div class="card-container">
+								<h4>C</h4>
+								<h3 id="header">FwStatus</h3>
+								<p id="line">Microsoft Defender Firewall Status Operations.</p>
+								<a href="https://github.com/PlatinumVoyager/fwstatus" class="btn btn-default black-image-project-hover">Visit</a>
+							</div>
+						</div>
+						
+						<!-- NETOOLSET CARD CONTAINER -->
+						<div class="col-sm-4">
+							<a href="https://github.com/PlatinumVoyager/NEToolset">
+								<img src="./assets/images/netoolset.jpg" alt="Image" class="img-responsive">
+							</a>
+							<div class="card-container">
+								<h4>C, Python3, Golang</h4>
+								<h3 id="header">NEToolset</h3>
+								<p id="line">A collection of networking tools and utilities.</p>
+								<a href="https://github.com/PlatinumVoyager/NEToolset" class="btn btn-default black-image-project-hover">Visit</a>
+							</div>
+						</div>
+					</div> <!-- END ROW #2 -->
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			function update(e){
+			var x = e.clientX || e.touches[0].clientX
+			var y = e.clientY || e.touches[0].clientY
+
+			document.documentElement.style.setProperty('--cursorX', x + 'px')
+			document.documentElement.style.setProperty('--cursorY', y + 'px')
+			}
+
+			document.addEventListener('mousemove',update)
+			document.addEventListener('touchmove',update)
+		</script>
+
+		<script type="text/javascript">
+			// Get the canvas node and the drawing context
+			const canvas = document.querySelector('#canv');
+			const ctx = canvas.getContext('2d');
+
+			// set the width and height of the canvas
+			const w = canvas.width = document.body.offsetWidth;
+			const h = canvas.height = document.body.offsetHeight;
+
+			// draw a black rectangle of width and height same as that of the canvas
+			ctx.fillStyle = '#000';
+			ctx.fillRect(0, 0, w, h);
+
+			const cols = Math.floor(w / 20) + 1;
+			const ypos = Array(cols).fill(0);
+
+			function matrix() {
+				// Draw a semitransparent black rectangle on top of the previous drawing
+				ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+				ctx.fillRect(0, 0, w, h);
+
+				// Set color to green and font to 15pt monospace in the drawing context
+				ctx.fillStyle = '#0f0';
+				ctx.font = '15pt monospace';
+
+				// Loop through columns and update the animation
+				ypos.forEach((y, ind) => {
+					const text = String.fromCharCode(Math.random() * 128);
+					const x = ind * 20;
+					ctx.fillText(text, x, y);
+
+					if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+					else ypos[ind] = y + 20;
+				});
+			}
+
+			// Render the animation at > 20 (val 50) FPS.
+			setInterval(matrix, 77);
+
+			function generateCanvasImage() {
+				// Create an off-screen canvas for rendering
+				const offscreenCanvas = document.createElement('canvas');
+				offscreenCanvas.width = w;
+				offscreenCanvas.height = h;
+				const offscreenCtx = offscreenCanvas.getContext('2d');
+
+				// Draw the same content on the off-screen canvas
+				offscreenCtx.fillStyle = '#000';
+				offscreenCtx.fillRect(1, 1, w, h);
+
+				offscreenCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+				offscreenCtx.fillRect(1, 1, w, h);
+
+				offscreenCtx.fillStyle = '#0f0';
+				offscreenCtx.font = '15pt monospace';
+
+				ypos.forEach((y, ind) => {
+					const text = String.fromCharCode(Math.random() * 128);
+					const x = ind * 20;
+					offscreenCtx.fillText(text, x, y);
+
+					if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+					else ypos[ind] = y + 20;
+				});
+
+				// Convert the off-screen canvas to a data URL
+				return offscreenCanvas.toDataURL();
+			}
+		</script>
+	</body>
+
+	<footer class="footer-container text-center" style="position: fixed; width: 100%; left: 0; bottom: 0; overflow: hidden; height: auto; background-color: black;">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<p style="color: white;">© PLATINUMVOYAGER 2024. All rights reserved.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+	document.addEventListener("DOMContentLoaded", function (event) {
+		navActivePage();
+	});
+	</script>
+
+	<script type="text/javascript" src="./main.js"></script></body>
+
+	<noscript>There appears to be an Ad-blocker or some other sort of site interference. Disable such mechanisms and try again.</noscript>
+</html>

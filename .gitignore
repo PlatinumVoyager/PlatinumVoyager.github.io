@@ -1,5 +1,10 @@
+# hello there
 _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
 vendor
+about.markdown
+index.markdown
+_posts/2023-10-20-welcome-to-jekyll.markdown
+# there is no information of worth contained within this file :)

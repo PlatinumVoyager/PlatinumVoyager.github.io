@@ -4,10 +4,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <link href="./main.css" rel="stylesheet">
+        <link href="./hover.css" rel="stylesheet">
 
-        <link href="./main.3f6952e4.css" rel="stylesheet">
     </head>
     <header>
         <nav class="navbar-dark navbar-fixed-top navbar-default">
@@ -21,10 +20,10 @@
         
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav ">
-                        <li><a href="./index.html" title="">01 : Home</a></li>
-                        <li class="active"><a href="./articles.html">02: Articles</a></li>
-                        <li><a href="./works.html" title="">03 : Projects</a></li>
-                        <li><a href="./about.html" title="">04 : About</a></li>
+                        <li><a href="./index.html" title="Official landing page" class="hvr-underline-from-center" id="sweep-link-home">01 : Home</a></li>
+                        <li class="active"><a href="./articles.html" title="You are here" class="hvr-underline-from-center" id="sweep-link-articles">02: Articles <i class="fa fa-book hvr-icon"></i></a></li>
+                        <li><a href="./projects.html" title="Novelty open source projects" class="hvr-underline-from-center" id="sweep-link-projects">03 : Projects</a></li>
+                        <li><a href="./about.html" title="About me" class="hvr-underline-from-center" id="sweep-link-about">04 : About</a></li>
                     </ul>
                 </div> 
             </div>
@@ -32,6 +31,60 @@
 
         <!-- START CSS INLINE STYLING OPERATIONS -->
         <style>
+            /* HOME LINK */
+            #sweep-link-home.hvr-underline-from-center:before {
+                background: rgb(0, 255, 0);
+            }
+
+            #sweep-link-home:hover {
+                color: rgb(0, 255, 0);
+            }
+
+            #sweep-link-home, #sweep-link-articles, #sweep-link-projects, #sweep-link-about {
+                max-width: 100%;
+                max-height: 100%;
+                padding-top: 10px; padding-bottom: 10px;
+            }
+
+            a#sweep-link-home.hvr-icon-fade:hover {
+                color: rgb(255, 255, 255);
+            }
+
+            i.fa.fa-book.hvr-icon {
+                color: grey;
+            }
+
+            i.fa.fa-book.hvr-icon:hover {
+                /*  */
+            }
+
+            /* ARTICLES LINK */
+            #sweep-link-articles.hvr-underline-from-center:before {
+                background: grey;
+            }
+
+            #sweep-link-articles:hover {
+                color: grey;
+            }
+
+            /* PROJECTS LINK */
+            #sweep-link-projects.hvr-underline-from-center:before {
+                background: rgb(0, 255, 0);
+            }
+
+            #sweep-link-projects:hover {
+                color: rgb(0, 255, 0);
+            }
+
+            /* ABOUT LINK */
+            #sweep-link-about.hvr-underline-from-center:before {
+                background: rgb(0, 255, 0);
+            }
+
+            #sweep-link-about:hover {
+                color: rgb(0, 255, 0);
+            }
+
             #canv {
                 position: fixed;
                 width: 100%;
@@ -39,6 +92,27 @@
                 z-index: -1;
                 top: 0;
                 left: 0;
+            }
+
+            #canv-inline {
+                z-index: 1;
+                position: relative;
+                width: 95%;
+                height: 85%;
+                /* margin-top: 10px; */
+                margin-left: 2%;
+                margin-right: 2%;
+                margin-bottom: 3.5%;
+                padding-bottom: 10%;
+                background-color: black;
+                opacity: 95%;
+                border: solid 2px;
+                border-color: rgb(0, 255, 0);
+            }
+
+            #sec {
+                margin-bottom: 0;
+                padding-bottom: 15px;
             }
     
             #header {
@@ -49,24 +123,6 @@
                 color: white;
                 font-size: medium;
                 background-color: black;
-            }
-    
-            ul#countdown {
-                background-color: black;
-                position: relative;
-                top: 20%;
-                opacity: 90%;
-                transform: translateY(-50%);
-                width: 50%;
-                margin: 0 auto;
-                padding: 15px 0 20px 0;
-                color: #fff;
-                border: 1px solid #adafb2;
-                border-width: 1px;
-                overflow: hidden;
-                font-family: 'Arial Narrow', Arial, sans-serif;
-                font-weight: bold;
-                
             }
                 
             .lic {
@@ -132,65 +188,180 @@
             .navbar-default .navbar-nav>.active>a {
                 color: gray;
             }
+
+            /* CUSTOM TEST STYLING */
+            .glow {
+                padding-top: 4.5%;
+                font-size: 30px;
+                text-align: center;
+                animation: glow 1s ease-in-out infinite alternate;
+            }
+
+            @-webkit-keyframes glow {
+                from {
+                    text-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 20px hsl(101, 100%, 25%), 0 0 30px #48ff00, 0 0 40px #48ff00, 0 0 50px #38ff06, 0 0 60px #141414;
+                }
+            
+                to {
+                    text-shadow: 0 0 60px #000000, 0 0 30px #56aa26, 0 0 30px #31f700, 0 0 40px #44961e, 0 0 50px #33ff00, 0 0 60px #3cff00, 0 0 70px #5eff00;
+                }
+            }
+
+            .col-container {
+                overflow-y: auto;
+                opacity: 90%;
+                border: 2px solid;
+                border-color: rgb(0, 255, 0);
+                position: sticky;
+                display: table;
+                max-width: 100%;
+                max-height: 100%;
+                /* width: 100%;  */
+                /* height: 100%; */
+                padding-bottom: 10px;
+                margin: auto;
+            }
+            
+            .col {
+                background: black;
+                display: table-cell;    
+                max-width: 100%;
+                max-height: 100%;            
+            }
+
+            @media only screen and (max-width: 600px) {
+                .col { 
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+            }
+
+            #container-inline {
+                color: white;
+                font-size: 15px;
+                font-family: Courier;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            a#container-link {
+                color: whitesmoke;
+            }
+
+            a:hover#container-link {
+                color: rgb(0, 255, 0);
+                text-transform: uppercase;
+            }
+
+            #table-h2 {
+                color: rgb(0, 255, 0);
+                padding-left: 15px;
+            }
+
+            .col a {
+                color: grey;
+            }
+
+            .col a:hover {
+                color: grey;
+                text-transform: none;
+            }
+
+            a#container-link-expired {
+                position: relative;
+            }
+
+            a#container-link-expired:hover::after {
+                content: "Article not yet published.";
+                position: absolute;
+                top: 1.1em;
+                left: 1em;
+                min-width: 200px;
+                border: 1px #808080 solid;
+                padding: 8px;
+                color: rgb(0, 255, 0);
+                background-color: black;
+                z-index: 1;
+            }
         </style>
         <!-- END CSS INLINE STYLING -->
     </header>
 
     <!-- CANVAS SETUP -->
     <canvas id="canv"></canvas>
-
-    <body>
-        <div class="section-container">
+    <body class="minimal">
+        <div class="section-container" id="sec">
             <div class="container">
+                <!-- START ENTRY COLUMN -->
                 <div class="row" id="bord">
                     <div class="col-xs-12">
                         <div class="section-container-spacer text-center">
-                        <h1 class="h2" style="color: rgb(0, 255, 0); background-color: black;">0x41727469636C6573</h1>
+                            <h2 class="glow" style="color: rgb(0, 255, 0);">0x41727469636C6573</h1>
+                            <p id="line">A mirage of public technical guides concerning low-level techniques and operations</p>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- NEW ENTRY  -->
+
+                <!-- USE https://www.w3schools.com/html/html_table_padding_spacing.asp to add to reactive table -->
+                <div class="col-container">
+                    <div class="col" style="background:black">
+                        <h2 id="table-h2">Wireless (802.11)</h2>
+                        <br>
+                        <br>
+                        <!-- FIRST ARTICLE -->
+                        <p id="container-inline"><a href="./articles/wireless_01_wpa_beacon_frames.html" id="container-link">#01 - Analysing IEEE 802.11 Beacon Frames</a></p>
+                        
+                        <p id="container-inline"><a href="#" id="container-link-expired"><del>#02 - Utilizing WIREEYE for wireless reconnaissance</del></a></p>
+                        
+                        
+                        <p id="container-inline"><a href="#" id="container-link-expired"><del>#03 - Sending 0x0C (deauthentication) frames to remote stations</del></a></p>
+                        <p id="container-inline"><a href="#" id="container-link-expired"><del>#04 - Monitoring 802.11 Probe Requests to track wireless stations connected to hidden networks</del></a></p>
+                    </div>
+                    
+                    <div class="col" style="background:black">
+                        <h2 id="table-h2">Computer Networking</h2>
+                        <br>
+                        <br>
+                        <p style="color: white; font-size: 20px; padding-left: 5px;"><i> IN PROGRESS</i></p>
+                    </div>
+                  
+                    <div class="col" style="background:black">
+                        <h2 id="table-h2">Computer Programming</h2>
+                        <br>
+                        <br>
+                        <p style="color: white; font-size: 20px; padding-left: 5px;"><i>IN PROGRESS</i></p>
+                    </div>
+                </div> 
+                
+                <br>
+
+                <div class="col-container" style="opacity: 90%;">
+                    <div class="col" style="background:black">
+                        <h2 id="table-h2">Binary Analysis</h2>
+                        <br>
+                        <br>
+                        <p style="color: white; font-size: 20px; padding-left: 5px;"><i>IN PROGRESS</i></p>
+                    </div>
+                  
+                    <div class="col" style="background:black">
+                        <h2 id="table-h2">Computer Exploitation</h2>
+                        <br>
+                        <br>
+                        <p style="color: white; font-size: 20px; padding-left: 5px;"><i>IN PROGRESS</i></p>
+                    </div>
+                  
+                    <div class="col" style="background:black">
+                        <h2 id="table-h2">Reverse Engineering</h2>
+                        <br>
+                        <br>
+                        <p style="color: white; font-size: 20px; padding-left: 5px;"><i>IN PROGRESS</i></p> 
+                    </div>
+                </div> 
             </div>
         </div>
-
-        <!-- START BREAKPOCALYPSE -->
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <!-- END BREAKPOCALYPSE -->
-        
-        <ul id="countdown">
-            <!-- DAYS -->
-            <li id="days" class="lic">
-                <div class="number">00</div>
-                <div class="label">Days</div>
-            </li>
-            
-            <!-- HOURS -->
-            <li id="hours" class="lic">
-                <div class="number">00</div>
-                <div class="label">Hours</div>
-            </li>
-
-            <!-- MINUTES -->
-            <li id="minutes" class="lic">
-                <div class="number">00</div>
-                <div class="label">Minutes</div>
-            </li>
-
-            <!-- SECONDS -->
-            <li id="seconds" class="lic">
-                <div class="number">00</div>
-                <div class="label">Seconds</div>
-            </li>
-        </ul>      
 
         <!-- MATRIX SETUP -->
         <script type="text/javascript">
@@ -263,102 +434,11 @@
             }
           </script>
 
-        <script type="text/javascript">
-            /* --------------------------
-            * GLOBAL VARS
-            * -------------------------- */
-            var targetDate = new Date("2024/2/5 3:00:00");   
-
-            // Other date related variables
-            var days;
-            var hrs;
-            var min;
-            var sec;
-
-            /* --------------------------
-            * ON DOCUMENT LOAD
-            * -------------------------- */
-            $(function() {
-                // Calculate time until launch date
-                timeToLaunch();
-                
-                // Transition the current countdown from 0 
-                numberTransition('#days .number', days, 1000, 'easeOutQuad');
-                numberTransition('#hours .number', hrs, 1000, 'easeOutQuad');
-                numberTransition('#minutes .number', min, 1000, 'easeOutQuad');
-                numberTransition('#seconds .number', sec, 1000, 'easeOutQuad');
-                
-                // Begin Countdown
-                setTimeout(countDownTimer,1001);
-            });
-
-            /* --------------------------
-            * FIGURE OUT THE AMOUNT OF 
-            TIME LEFT BEFORE LAUNCH
-            * -------------------------- */
-            function timeToLaunch(){
-                // Get the current date
-                var currentDate = new Date();
-
-                // Find the difference between dates
-                var diff = (currentDate - targetDate)/1000;
-                var diff = Math.abs(Math.floor(diff));  
-
-                // Check number of days until target
-                days = Math.floor(diff/(24*60*60));
-                sec = diff - days * 24*60*60;
-
-                // Check number of hours until target
-                hrs = Math.floor(sec/(60*60));
-                sec = sec - hrs * 60*60;
-
-                // Check number of minutes until target
-                min = Math.floor(sec/(60));
-                sec = sec - min * 60;
-            }
-
-            /* --------------------------
-            * DISPLAY THE CURRENT 
-            COUNT TO LAUNCH
-            * -------------------------- */
-            function countDownTimer(){ 
-                
-                // Figure out the time to launch
-                timeToLaunch();
-                
-                // Write to countdown component
-                $( "#days .number" ).text(days);
-                $( "#hours .number" ).text(hrs);
-                $( "#minutes .number" ).text(min);
-                $( "#seconds .number" ).text(sec);
-                
-                // Repeat the check every second
-                setTimeout(countDownTimer,1000);
-            }
-
-            /* --------------------------
-            * TRANSITION NUMBERS FROM 0
-            TO CURRENT TIME UNTIL LAUNCH
-            * -------------------------- */
-            function numberTransition(id, endPoint, transitionDuration, transitionEase){
-            // Transition numbers from 0 to the final number
-            $({numberCount: $(id).text()}).animate({numberCount: endPoint}, {
-                    duration: transitionDuration,
-                    easing:transitionEase,
-                    
-                    step: function() {
-                        $(id).text(Math.floor(this.numberCount));
-                    },
-
-                    complete: function() {
-                        $(id).text(this.numberCount);
-                    }
-                }); 
-            };
-        </script>
+        <br>
+        <br>
     </body>
 
-    <footer class="footer-container text-center" style="position: fixed; width: 100%; left: 0; bottom: 0; overflow: hidden; height: auto; background-color: black; padding-top: 2%;">
+    <footer class="footer-container text-center" style="position: fixed; width: 100%; left: 0; bottom: 0; overflow: hidden; height: auto; background-color: black; padding-top: 1%;">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -374,6 +454,6 @@
         });
     </script>
       
-    <script type="text/javascript" src="./main.70a66962.js"></script></body>
-      
+    <script type="text/javascript" src="./main.js"></script></body>
+    <noscript>There appears to be an Ad-blocker or some other sort of site interference. Disable such mechanisms and try again.</noscript>
 </html>

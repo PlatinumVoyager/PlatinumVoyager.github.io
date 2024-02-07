@@ -1,27 +1,23 @@
 <!DOCTYPE html>
-  <head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width,initial-scale=1" name="viewport">
-    <meta content="description" name="description">
-    <meta name="google" content="notranslate" />
+	<head>
+		<meta charset="UTF-8">
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<meta content="width=device-width,initial-scale=1" name="viewport">
+		<meta content="description" name="description">
+		<meta name="google" content="notranslate" />
 
-    <!-- Disable tap highlight on IE -->
-    <meta name="msapplication-tap-highlight" content="no">
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-    <link href="./assets/favicon.ico" rel="icon">
-    <title>PlatinumVoyager</title>  
+		<!-- Disable tap highlight on IE -->
+		<meta name="msapplication-tap-highlight" content="no">
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+		<link href="./assets/favicon.ico" rel="icon">
+		<title>PlatinumVoyager</title>  
 
-    <link href="./main.3f6952e4.css" rel="stylesheet">
-
-    <style>
-      
-
-    </style>
-  </head>
-  <header>
-    <nav class="navbar-dark navbar-fixed-top navbar-default">
+		<link href="./main.css" rel="stylesheet">
+    <link href="./hover.css" rel="stylesheet">
+	</head>
+	<header>
+		<nav class="navbar-dark navbar-fixed-top navbar-default">
       <div class="container">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -32,94 +28,175 @@
     
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav ">
-            <li><a href="./index.html" title="">01 : Home</a></li>
-            <li><a href="./articles.html">02: Articles</a></li>
-            <li><a href="./works.html" title="">03 : Projects</a></li>
-            <li class="active"><a href="./about.html" title="">04 : About</a></li>
+            <li><a href="./index.html" title="Official landing page" class="hvr-underline-from-center" id="sweep-link-home">01 : Home</i></a></li>
+            <li><a href="./articles.html" title="Technical articles and posts" class="hvr-underline-from-center" id="sweep-link-articles">02: Articles</a></li>
+            <li><a href="./projects.html" title="Novelty open source projects" class="hvr-underline-from-center" id="sweep-link-projects">03 : Projects</a></li>
+            <li class="active"><a href="./about.html" title="You are here" class="hvr-underline-from-center" id="sweep-link-about">04 : About <i class="fa fa-address-card hvr-icon"></i></a></li>
           </ul>
         </div> 
       </div>
     </nav>
 
-    <!-- START CSS INLINE STYLING OPERATIONS -->
-    <style>
-      #canv {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        top: 0;
-        left: 0;
-      }
+		<!-- START CSS INLINE STYLING OPERATIONS -->
+		<style>
+      /* HOME LINK */
+				#sweep-link-home.hvr-underline-from-center:before {
+					background: rgb(0, 255, 0);
+				}
 
-      #inline {
-        color: rgb(0, 255, 0);
+				#sweep-link-home:hover {
+					color: rgb(0, 255, 0);
+				}
+
+				#sweep-link-home, #sweep-link-articles, #sweep-link-projects, #sweep-link-about {
+					max-width: 100%;
+					max-height: 100%;
+					padding-top: 10px; padding-bottom: 10px;
+				}
+
+				a#sweep-link-home.hvr-icon-fade:hover {
+					color: rgb(255, 255, 255);
+				}
+
+				i.fa.fa-address-card.hvr-icon {
+					color: grey;
+				}
+
+				i.fa.fa-address-card.hvr-icon:hover {
+					/*  */
+				}
+
+				/* ARTICLES LINK */
+				#sweep-link-articles.hvr-underline-from-center:before {
+					background: rgb(0, 255, 0);
+				}
+
+				#sweep-link-articles:hover {
+					color: rgb(0, 255, 0);
+				}
+
+				/* PROJECTS LINK */
+				#sweep-link-projects.hvr-underline-from-center:before {
+					background: rgb(0, 255, 0);
+				}
+
+				#sweep-link-projects:hover {
+					color: rgb(0, 255, 0);
+				}
+
+				/* ABOUT LINK */
+				#sweep-link-about.hvr-underline-from-center:before {
+					background: grey;
+				}
+
+				#sweep-link-about:hover {
+					color: grey;
+				}
+
+			#canv {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+				top: 0;
+				left: 0;
+			}
+
+			#inline {
+				color: rgb(0, 255, 0);
+				background-color: black;
+				border: 2px;
+			}
+
+			#glink {
+				color: rgb(0, 255, 0);
+				background-color: black;
+			}
+
+			a:hover#glink {
+				color: white;
+			}
+
+			a:hover {
+				color: rgb(0, 255, 0);
+			}
+			
+			.navbar-default .navbar-toggle {
+				background-color: black;
+				color: green;
+			}
+
+			.navbar-default {
+				background-color: black;
+				width: 100%;
+				height: auto;
+				position: absolute;
+			}
+
+			.navbar-default .navbar-collapse {
+				background-color: black;
+				color: green;
+				width: 100%;
+			}
+
+			.navbar-default .navbar-collapse:focus {
+				background-color: black;
+			}
+
+			.navbar-default .navbar-nav>li>a {
+				color: rgb(0, 255, 0);
+			}
+
+			.navbar-default .navbar-nav>li>a:hover {
+				color: white;
+			}
+
+			.navbar-default .navbar-nav>.active>a {
+				color: gray;
+			}
+
+			.glow {
+				padding-top: 4.5%;
+				font-size: 30px;
+				text-align: center;
+				animation: glow 1s ease-in-out infinite alternate;
+				}
+
+				@-webkit-keyframes glow {
+				from {
+					text-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 20px hsl(101, 100%, 25%), 0 0 30px #48ff00, 0 0 40px #48ff00, 0 0 50px #38ff06, 0 0 60px #141414;
+				}
+			
+				to {
+					text-shadow: 0 0 60px #000000, 0 0 30px #56aa26, 0 0 30px #31f700, 0 0 40px #44961e, 0 0 50px #33ff00, 0 0 60px #3cff00, 0 0 70px #5eff00;
+				}
+			}
+
+      .row#bord2 {
+        margin-right: 2px; margin-left: 2px;
+        border: 2px solid rgb(0, 255, 0);
+
+        padding-bottom: 50px;
+
         background-color: black;
-        border: 2px;
+        opacity: 90%;
       }
-
-      #glink {
-        color: rgb(0, 255, 0);
-        background-color: black;
-      }
-
-      a:hover#glink {
-        color: white;
-      }
-
-      a:hover {
-        color: rgb(0, 255, 0);
-      }
-      
-      .navbar-default .navbar-toggle {
-        background-color: black;
-        color: green;
-      }
-
-      .navbar-default {
-        background-color: black;
-        width: 100%;
-        height: auto;
-        position: absolute;
-      }
-
-      .navbar-default .navbar-collapse {
-        background-color: black;
-        color: green;
-        width: 100%;
-      }
-
-      .navbar-default .navbar-collapse:focus {
-        background-color: black;
-      }
-
-      .navbar-default .navbar-nav>li>a {
-        color: rgb(0, 255, 0);
-      }
-
-      .navbar-default .navbar-nav>li>a:hover {
-        color: white;
-      }
-
-      .navbar-default .navbar-nav>.active>a {
-        color: gray;
-      }
-    </style>
-    <!-- END CSS INLINE STYLING -->
-  </header>	
+		</style>
+		<!-- END CSS INLINE STYLING -->
+	</header>	
 
   <canvas id="canv" style="background-color: black;"></canvas>
 
   <body class="minimal">
     <div class="section-container">
       <div class="container">
-        <div class="row" id="bord">
+        <div class="row">
           <div class="col-xs-12">
             <div class="section-container-spacer text-center">
-              <h1 class="h2" style="color: rgb(0, 255, 0); background-color: black;">0x41626F7574</h1>
+              <h1 class="glow" style="color: rgb(0, 255, 0);">0x41626F7574</h1>
             </div>
             
-            <div class="row">
+            <div class="row" id="bord2">
               <div class="col-lg-10 col-md-offset-1">
                 <div class="row">
                   <div class="col-xs-12 col-md-6">
@@ -135,20 +212,23 @@
                       Experience in Linux/Windows ABI/API specific software development (as seen on Github)
                     </p>
                   </div>
-                  <div class="col-xs-12 col-md-6" style="padding-left: 11px;">
+                  <div class="col-xs-12 col-md-6" style="padding-left: 11px; max-width: 100%;">
                     <h3 id="inline">Skill set</h3>
                     <div style="color: white; font-size: medium; background-color: black;">
-                      <p>* Windows/Linux setup, configuration and deployment</p>
-                      <p>* <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/6UPX5BYLL744" alt="click me" id="glink">Google IT Support Professional (view here)</a></p>
-                      <p>* <a href="https://coursera.org/verify/professional-cert/JFUY9SHAYFM8" alt="click-me" id="glink">Google Cybersecurity Professional (view here)</a></p>
-                      <p>* Programming: C, Python3, Rust (learning)</p>
-                      <p>* Offensive/Intelligence based software development skillset</p>
-                      <p>* Intermediate static website development and deployment (HTML/CSS, JavaScript, Bootstrap CDN)</p>
-                      <p>* Network software communications knowledge (sockets, channels, pipes, etc)</p>
-                      <p>* Network Administration (Concepts, Setup)</p>
-                      <p>* Computer and Computer Network Troubleshooting</p>
-                      <p>* Intermediate physical hardware inspection and replacement</p>
-                      <p>* Network setup, configuration, customization and deployment</p>
+                    	<ul style="max-width: 100%; max-height: 100%;">
+							<li>Windows/Linux setup, configuration and deployment</li>
+							<li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/6UPX5BYLL744" alt="click me" id="glink">Google IT Support Professional (view here)</a></li>
+							<li><a href="https://coursera.org/verify/professional-cert/JFUY9SHAYFM8" alt="click-me" id="glink">Google Cybersecurity Professional (view here)</a></li>
+							<li>Programming: C, Python3, Rust (<i>learning</i>)</li>
+							<li>Offensive/Intelligence based software development skillset</li>
+							<li>Customer/Client sales, technical support, and service experience</li>
+							<li>Intermediate static website development and deployment (HTML/CSS, JavaScript, Bootstrap CDN)</li>
+							<li>Network software communications knowledge (sockets, channels, pipes, etc)</li>
+							<li>Network Administration (Concepts, Setup)</li>
+							<li>Computer and Computer Network Troubleshooting</li>
+							<li>Intermediate physical hardware inspection and replacement</li>
+							<li>Network setup, configuration, customization and deployment</li>
+                      	</ul>
                     </div>
                   </div>
                 </div>
@@ -246,6 +326,6 @@
     });
   </script>
 
-  <script type="text/javascript" src="./main.70a66962.js"></script></body>
-
+  <script type="text/javascript" src="./main.js"></script></body>
+  <noscript>There appears to be an Ad-blocker or some other sort of site interference. Disable such mechanisms and try again.</noscript>
 </html>
